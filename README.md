@@ -24,7 +24,7 @@ Running requires an OpenOCD provided by your hardware platform vendor.
 cargo build
 ```
 
-Compiled ELF file can be found at: `target/riscv32imc-unknown-none-elf/debug/rv32m1_ri5cy_example`.
+Compiled ELF file can be found at: `target/riscv32imc-unknown-none-elf/debug/rv32m1_ri5cy-example`.
 
 ### Connecting to Target
 
@@ -51,7 +51,7 @@ OpenOCD will expose multiple ports for interacting with the target.
 Connect to `localhost:4444` with any preferred telnet client (like PuTTY for Windows). Use following commands to program and run the target:
 
 ```
-program target/riscv32imc-unknown-none-elf/debug/rv32m1_ri5cy_example
+program target/riscv32imc-unknown-none-elf/debug/rv32m1_ri5cy-example
 reset
 resume
 ```
@@ -61,7 +61,7 @@ resume
 Open the binary with GDB and connect to the remote targed provided by OpenOCD with:
 
 ```
-C:\Vega\Toolchain_Windows\riscv32-unknown-elf-gcc\bin\riscv32-unknown-elf-gdb.exe target\riscv32imc-unknown-none-elf\debug\rv32m1_ri5cy_example --eval-command="target remote localhost:3333"
+C:\Vega\Toolchain_Windows\riscv32-unknown-elf-gcc\bin\riscv32-unknown-elf-gdb.exe target\riscv32imc-unknown-none-elf\debug\rv32m1_ri5cy-example --eval-command="target remote localhost:3333"
 ```
 
 GDB can also program the target with `load` command.

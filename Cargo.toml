@@ -1,5 +1,5 @@
 [package]
-name = "rv32m1_ri5cy_example"
+name = "rv32m1_ri5cy-example"
 version = "0.1.0"
 authors = ["shamiao <shamiaoc@gmail.com>"]
 edition = "2018"

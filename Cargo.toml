@@ -1,9 +1,14 @@
 [package]
 name = "rv32m1_ri5cy-example"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["shamiao <shamiaoc@gmail.com>"]
 edition = "2018"
 
 [dependencies]
 panic-halt = "^0.2.0"
+riscv = "^0.5.4"
 riscv-rt = "^0.6.1"
+rv32m1_ri5cy-pac = { path = "../rv32m1_ri5cy-pac", version = "^0.1.1" }
+
+[profile.release]
+debug = true

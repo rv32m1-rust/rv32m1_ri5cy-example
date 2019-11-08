@@ -14,6 +14,20 @@ version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "embedded-hal"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "nb 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "nb"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "panic-halt"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -105,6 +119,18 @@ dependencies = [
  "panic-halt 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv-rt 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rv32m1_ri5cy-hal 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rv32m1_ri5cy-pac 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rv32m1_ri5cy-hal"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "embedded-hal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "nb 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "riscv 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "rv32m1_ri5cy-pac 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -151,9 +177,16 @@ name = "vcell"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
+[[package]]
+name = "void"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
 [metadata]
 "checksum bare-metal 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "5deb64efa5bd81e31fcd1938615a6d98c82eafcbcd787162b6f63b91d6bac5b3"
 "checksum bit_field 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ed8765909f9009617974ab6b7d332625b320b33c326b1e9321382ef1999b5d56"
+"checksum embedded-hal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "ee4908a155094da7723c2d60d617b820061e3b4efcc3d9e293d206a5a76c170b"
+"checksum nb 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b1411551beb3c11dedfb0a90a0fa256b47d28b9ec2cdff34c25a2fa59e45dbdc"
 "checksum panic-halt 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "de96540e0ebde571dc55c73d60ef407c653844e6f9a1e2fdbd40c07b9252d812"
 "checksum proc-macro2 0.4.30 (registry+https://github.com/rust-lang/crates.io-index)" = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
 "checksum quote 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)" = "6ce23b6b870e8f94f81fb0a363d65d86675884b34a09043c81e5562f11c1f8e1"
@@ -165,9 +198,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum riscv-rt 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3beb2e0d8513e3679d768c824fc0462b1fc94009f5b3b3770835e885e3b62634"
 "checksum riscv-rt-macros 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "3525f8341898dec060782087b7a15969e1cfe52818afacc47709265c19a23d53"
 "checksum rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "138e3e0acb6c9fb258b19b67cb8abd63c00679d2851805ea151465464fe9030a"
+"checksum rv32m1_ri5cy-hal 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "faba89b50153f786148b9ddfeff2341b4b471727e196bc79e47ceb7ab3cc41c6"
 "checksum rv32m1_ri5cy-pac 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "ffaca968aa19ffbfe0bb318079fd4a66e1fa5a5ce6da0721f4baec2d5feeb257"
 "checksum semver 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1d7eb9ef2c18661902cc47e535f9bc51b78acd254da71d375c2f6720d9a40403"
 "checksum semver-parser 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 "checksum syn 0.15.44 (registry+https://github.com/rust-lang/crates.io-index)" = "9ca4b3b69a77cbe1ffc9e198781b7acb0c7365a883670e8f1c1bc66fba79a5c5"
 "checksum unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 "checksum vcell 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "876e32dcadfe563a4289e994f7cb391197f362b6315dc45e8ba4aa6f564a4b3c"
+"checksum void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"

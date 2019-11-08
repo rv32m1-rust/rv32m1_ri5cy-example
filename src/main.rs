@@ -8,7 +8,7 @@ use hal::pac as pac;
 
 mod delay;
 
-fn main() -> Result<(), ()> {
+fn main() -> Result<(), core::convert::Infallible> {
     #![inline(always)]
 
     let peripherals = pac::Peripherals::take().unwrap();
@@ -21,9 +21,9 @@ fn main() -> Result<(), ()> {
     let mut gpioa = peripherals.GPIOA.split();
     loop {
         use delay::{delay, DELAY_CYCLES};
-        gpioa.p24.set_high().unwrap();
+        gpioa.p24.set_high()?;
         delay(DELAY_CYCLES * 3); // make logic 1 output lasts longer
-        gpioa.p24.set_low().unwrap();
+        gpioa.p24.set_low()?;
         delay(DELAY_CYCLES);
     }
 }

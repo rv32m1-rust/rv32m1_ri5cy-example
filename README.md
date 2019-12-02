@@ -5,9 +5,9 @@
 
 ## Prerequisites
 
-### Rust Compiler
+### Rust Language
 
-Rust 1.37+ with `riscv32imc-unknown-none-elf` target is required.  (note: may also work with older Rust versions)
+A Rust toolchain with `riscv32imc-unknown-none-elf` target installed is required.  
 
 Install the target to your existing Rust toolchain with:
 
@@ -16,6 +16,8 @@ rustup target add riscv32imc-unknown-none-elf
 ```
 
 Both GNU and MSVC toolchains work for Windows users.
+
+Minimum supported Rust version (MSRV) is `1.34.0`, using latest stable Rust is strongly suggested. 
 
 ### Hardware and Toolchain
 

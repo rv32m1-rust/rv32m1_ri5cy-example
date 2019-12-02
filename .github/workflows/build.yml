@@ -1,0 +1,44 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    name: Build for Rust ${{ matrix.rust_version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust_version: [
+          'stable',
+          'beta',
+          'nightly',
+          '1.34.0',
+          '1.34.1',
+          '1.34.2',
+          '1.35.0',
+          '1.36.0',
+          '1.37.0',
+          '1.38.0',
+          '1.39.0',
+        ]
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v1
+
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust_version }}
+          target: riscv32imc-unknown-none-elf
+          override: true
+
+      - name: Check
+        run: cargo check --verbose
+
+      - name: Build debug
+        run: cargo build --verbose
+
+      - name: Build release
+        run: cargo build --release --verbose
